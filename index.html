@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Split It Out — Proposed Store Page (Mockup)</title>
+<meta name="description" content="Academic prototype: proposed PC store page for the indie game Split It Out. Not a real store listing.">
+<link rel="stylesheet" href="css/store.css">
+</head>
+<body>
+
+<!-- Prototype banner: always visible, so nobody mistakes this for a live listing -->
+<div class="mockup-banner" role="note">
+  <div class="mb-inner">
+    <strong>PROPOSED STORE PAGE · MOCKUP</strong>
+    <span>Academic UI/UX prototype for an in-development game. Not a real Steam listing; not affiliated with Valve. No purchases, sign-in or accounts.</span>
+  </div>
+</div>
+
+<!-- ============ Global header ============ -->
+<header class="global-header">
+  <div class="gh-inner">
+    <button class="gh-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="globalMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="gh-logo" href="#top" aria-label="Store mockup home">
+      <span class="gh-logo-mark" aria-hidden="true"></span>
+      <span class="gh-logo-text">STORE<small>MOCKUP</small></span>
+    </a>
+    <nav class="gh-menu" id="globalMenu" aria-label="Global">
+      <a href="#top" class="active">Store</a>
+      <a href="#reviews" data-demo="Community features are not part of this prototype. Jumping to the reviews area.">Community</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+    </nav>
+    <div class="gh-right">
+      <span class="gh-demo-pill">Demo · no sign-in</span>
+    </div>
+  </div>
+</header>
+
+<div class="page" id="top">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- ============ Store nav ============ -->
+  <div class="store-nav-area">
+    <nav class="store-nav" aria-label="Store">
+      <div class="sn-tabs">
+        <a href="#top" class="sn-tab">Your Store</a>
+        <a href="#more" class="sn-tab">New &amp; Noteworthy</a>
+        <a href="#tagsBlock" class="sn-tab">Categories</a>
+        <a href="#wishlistArea" class="sn-tab">Wishlist <span class="sn-count" id="wishCount">0</span></a>
+        <a href="#news" class="sn-tab">News</a>
+      </div>
+      <div class="sn-search" role="search">
+        <label for="storeSearch" class="sr-only">Search this page</label>
+        <input id="storeSearch" type="search" placeholder="search" autocomplete="off"
+               role="combobox" aria-expanded="false" aria-controls="searchSuggest" aria-autocomplete="list">
+        <button class="sn-search-btn" id="searchBtn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 10.5l4 4" stroke="currentColor" stroke-width="2.4"/></svg>
+        </button>
+        <ul class="search-suggest" id="searchSuggest" role="listbox" hidden></ul>
+      </div>
+    </nav>
+  </div>
+
+  <main class="page-content">
+
+    <!-- ============ Title area ============ -->
+    <div class="page-title-area">
+      <div class="breadcrumbs">
+        <a href="#top">All Games</a> &gt; <a href="#tagsBlock">Indie Games</a> &gt; <a href="#top" data-bind="title">Split It Out</a>
+      </div>
+      <div class="apphub-head">
+        <h1 class="apphub-appname" data-bind="title">Split It Out</h1>
+        <a class="btn-grey community-hub" href="#reviews" data-demo="Community Hub is not part of this prototype.">Community Hub</a>
+      </div>
+    </div>
+
+    <!-- ============ Glance: media + summary ============ -->
+    <section class="glance" aria-label="Media and summary">
+      <div class="highlight">
+        <div class="highlight-player" id="player" tabindex="0" aria-roledescription="carousel" aria-label="Screenshots and trailer">
+          <img id="playerImg" src="assets/key 2.png" alt="">
+          <div class="player-play" id="playerPlay" aria-hidden="true"></div>
+          <div class="player-note" id="playerNote"></div>
+          <button class="player-arrow prev" id="prevBtn" aria-label="Previous screenshot"></button>
+          <button class="player-arrow next" id="nextBtn" aria-label="Next screenshot"></button>
+        </div>
+        <div class="highlight-strip">
+          <div class="strip-scroll" id="strip" role="list" aria-label="Thumbnails"></div>
+          <div class="strip-slider">
+            <button class="slider-arrow left" id="stripLeft" aria-label="Scroll thumbnails left"></button>
+            <div class="slider-track"><div class="slider-handle" id="sliderHandle"></div></div>
+            <button class="slider-arrow right" id="stripRight" aria-label="Scroll thumbnails right"></button>
+          </div>
+        </div>
+        <p class="sr-only" id="playerLive" aria-live="polite"></p>
+      </div>
+
+      <aside class="glance-right">
+        <img class="header-capsule" src="assets/key 2.png" alt="Split It Out header capsule (placeholder logo)">
+        <p class="desc-snippet">Captured by the hermit crab mafia, a small sand-spitting fish wakes up in a prison slum built from ocean trash. Fight the guards, sort the junk you steal into upgrades, and break out with your friends one chamber at a time.</p>
+        <div class="glance-rows">
+          <div class="g-row"><span class="g-sub">All Reviews:</span><span class="g-val muted">No user reviews</span></div>
+          <div class="g-row"><span class="g-sub">Release Date:</span><span class="g-val">To be announced</span></div>
+          <div class="g-row"><span class="g-sub">Developer:</span><span class="g-val"><a href="#dev">SteepStray</a> <span class="ph"></span></span></div>
+          <div class="g-row"><span class="g-sub">Publisher:</span><span class="g-val"><span class="ph">SteepStray</span></span></div>
+        </div>
+        <div class="glance-tags" id="tagsBlock">
+          <div class="g-sub tags-label">Popular user-defined tags for this product:</div>
+          <div class="tags" id="tagList"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============ Queue actions ============ -->
+    <div class="queue-actions" id="wishlistArea">
+      <button class="btn-blue" id="wishBtn" aria-pressed="false"><span class="wl-check" aria-hidden="true"></span><span id="wishText">Add to your wishlist</span></button>
+      <button class="btn-blue" id="followBtn" aria-pressed="false"><span id="followText">Follow</span></button>
+      <button class="btn-blue" id="ignoreBtn" aria-pressed="false"><span id="ignoreText">Ignore</span></button>
+      <span class="queue-note">Saved in this browser only.</span>
+    </div>
+
+    <!-- ============ Two columns ============ -->
+    <div class="columns">
+      <div class="col-left">
+
+        <!-- Coming-soon state (what an unreleased game shows) -->
+        <div class="comingsoon">
+          <div class="cs-text">
+            <h2>This game is not yet available</h2>
+            <p>Planned Release Date: <span class="cs-date">To be announced</span></p>
+          </div>
+          <p class="cs-hint">Interested? Add it to your wishlist to see how the follow flow would work.</p>
+        </div>
+
+        <!-- Purchase box shown as a disabled layout preview -->
+        <div class="purchase" aria-describedby="purchaseNote">
+          <div class="purchase-platforms" title="Windows"><span class="win-icon" aria-hidden="true"></span><span class="sr-only">Windows</span></div>
+          <h2 class="purchase-title">Buy <span data-bind="title">Split It Out</span></h2>
+          <div class="purchase-action">
+            <div class="price">฿159.00</div>
+            <button class="btn-green" disabled>Add to Cart</button>
+          </div>
+          <p class="purchase-note" id="purchaseNote">Layout preview only. Pricing has not been decided and purchasing is disabled in this prototype.</p>
+        </div>
+
+        <!-- About -->
+        <section class="game-area-description" id="about">
+          <h2>About This Game</h2>
+          <p>Puff is a yellowhead jawfish with cheeks full of sand and no plans to stay locked up. Captured by the hermit crab mafia, he wakes in the Coral Ghetto: a prison slum stacked out of bottles, cans and plastic, where small fish work for crab guards and alley-boss fish hoard stolen sea trash.</p>
+          <p><strong>Split It Out</strong> is a 3D co-op action roguelite with a cute, cel-shaded low-poly look. Swim, fight and escape one chamber at a time, and see what the trash we throw away looks like to the ones still living down there.</p>
+
+          <h3>SPIT SAND</h3>
+          <p>Movement is pure swimming, with a dash to get out of trouble. Your main attack is a spit of sand, with a stronger charged spit on a second skill slot. Every chamber is a fight against crab guards and every cleared chamber moves you closer to the top of the fortress.</p>
+
+          <img class="desc-img" src="assets/keyvisual6.png" alt="Placeholder art: sorting station with three bins">
+
+          <h3>SORT THE TRASH</h3>
+          <p>Guards drop trash bags. Haul them to the upgrade vending machine in your hideout and sort each piece into the right bin:</p>
+          <ul class="bb-ul">
+            <li><strong>Plastic</strong> powers your speed skill</li>
+            <li><strong>Glass</strong> powers reflect-attack</li>
+            <li><strong>Metal</strong> powers armor and shield</li>
+          </ul>
+          <p>Deeper chambers bring messier trash mixed with sand. Sort carelessly and your skills stay weak. Sort perfectly and you can smash through Don Hermit's fortress.</p>
+
+          <img class="desc-img" src="assets/14.png" alt="Placeholder art: three fish swimming together">
+
+          <h3>ESCAPE TOGETHER</h3>
+          <p>Nobody breaks out alone. One fish holds off the guards while another hauls trash, and the crew decides together who gets which upgrade. Split It Out can be played solo, but it is designed around online co-op.</p>
+
+          <h3>IN DEVELOPMENT</h3>
+          <p>The demo is planned as Main Menu, Lobby, Stages 1 to 3 and an Ending. These features are planned and not yet built:</p>
+          <ul class="bb-ul">
+            <li>Boss fights that drop upgrade items</li>
+            <li>A between-run economy and skill progression</li>
+            <li>Collectible cosmetics</li>
+            <li>Voice chat and emotes</li>
+            <li>First-person / third-person camera toggle</li>
+          </ul>
+        </section>
+
+        <!-- System requirements -->
+        <section class="sysreq" id="sysreq">
+          <h2>System Requirements</h2>
+          <div class="sysreq-tabs" role="tablist" aria-label="Operating system">
+            <button class="sysreq-tab active" role="tab" aria-selected="true">Windows</button>
+          </div>
+          <div class="sysreq-cols" id="sysreqCols"></div>
+          <p class="sysreq-note">Hardware requirements will be set after performance testing of the Unity 6 build. Values marked TBD are not decided.</p>
+        </section>
+
+        <!-- Reviews (honest empty state) -->
+        <section class="reviews" id="reviews">
+          <h2>Customer reviews for <span data-bind="title">Split It Out</span></h2>
+          <div class="reviews-empty">There are no reviews for this product. Reviews open after release.</div>
+        </section>
+
+        <!-- News placeholder -->
+        <section class="reviews" id="news">
+          <h2>Recent Events &amp; Announcements</h2>
+          <div class="reviews-empty">No announcements yet. Development updates will appear here.</div>
+        </section>
+      </div>
+
+      <!-- ============ Right sidebar ============ -->
+      <aside class="col-right">
+        <div class="block features">
+          <ul>
+            <li><span class="f-icon single" aria-hidden="true"></span>Single-player</li>
+            <li><span class="f-icon coop" aria-hidden="true"></span>Online Co-op</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-title">Languages:</div>
+          <table class="lang-table">
+            <thead><tr><th scope="col"></th><th scope="col">Interface</th><th scope="col">Full Audio</th><th scope="col">Subtitles</th></tr></thead>
+            <tbody><tr><td class="ph">To be confirmed</td><td></td><td></td><td></td></tr></tbody>
+          </table>
+        </div>
+
+        <div class="block details" id="dev">
+          <div class="d-row"><b>Title:</b> <span data-bind="title">Split It Out</span></div>
+          <div class="d-row"><b>Genre:</b> <a href="#tagsBlock">Action</a>, <a href="#tagsBlock">Adventure</a>, <a href="#tagsBlock">Indie</a></div>
+          <div class="d-row"><b>Developer:</b> <a href="#dev">SteepStray</a> <span class="ph"></span></div>
+          <div class="d-row"><b>Publisher:</b> <span class="ph">SteepStray</span></div>
+          <div class="d-row"><b>Engine:</b> Unity 6</div>
+          <div class="d-row"><b>Release Date:</b> To be announced</div>
+          <div class="links-list" id="support">
+            <a class="linkbar" href="#support" data-demo="The official website is not live yet.">Visit the website <span class="ph">(coming soon)</span></a>
+            <a class="linkbar" href="#support" data-demo="The community Discord will be linked here when it opens.">Discord <span class="ph">(coming soon)</span></a>
+            <a class="linkbar" href="#news">Read related news</a>
+            <span class="linkbar static">Contact: <span class="ph">[contact TBD]</span></span>
+          </div>
+        </div>
+
+        <div class="block" id="more">
+          <div class="block-title">Status</div>
+          <p class="side-text">Prototype, in development. Developer goal: finish the game by the end of 2026.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-rule"></div>
+      <div class="footer-row">
+        <div class="footer-logo" aria-hidden="true">STORE<small>MOCKUP</small></div>
+        <div class="footer-text">
+          <p>© 2026 Nich <span class="ph">[studio TBD]</span>. Split It Out, its story, characters and artwork are original project assets. All images on this page are placeholders.</p>
+          <p>Independent academic prototype made for a university UI/UX course. It imitates the layout of a PC store page to show how the game could be presented. It is not affiliated with, hosted by, or endorsed by Steam or Valve Corporation.</p>
+          <p class="footer-links">
+            <a href="#about">About this game</a> |
+            <a href="#sysreq">System requirements</a> |
+            <a href="#support">Contact</a> |
+            <a href="https://store.steampowered.com/app/3527290/PEAK/" target="_blank" rel="noopener noreferrer" class="ext">Layout reference: PEAK on Steam <span aria-hidden="true">↗</span><span class="sr-only">(external site, opens in a new tab)</span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/game-data.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>
