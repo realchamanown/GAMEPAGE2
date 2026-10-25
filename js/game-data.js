@@ -9,12 +9,12 @@ window.GAME = {
   // Gallery: first item can be a trailer (type "video" shows a play badge; no video file yet).
   media: [
     { type: "video", src: "assets/key 2.png", label: "Trailer slot (placeholder: no trailer produced yet)" },
-    { type: "image", src: "assets/screenshots/Screenshot 2026-09-26 214136.png", label: "The Coral Ghetto (placeholder)" },
-    { type: "image", src: "assets/screenshots/Screenshot 2026-09-26 233045.png", label: "Sand-spit combat (placeholder)" },
+    { type: "image", src: "assets/keyvisual6.png", label: "The Coral Ghetto (placeholder)" },
+    { type: "image", src: "assets/14.png", label: "Sand-spit combat (placeholder)" },
     { type: "image", src: "assets/screenshots/Screenshot 2026-09-27 150203.png", label: "Sorting station (placeholder)" },
     { type: "image", src: "assets/screenshots/Screenshot 2026-09-27 150350.png", label: "Upgrade vending machine (placeholder)" },
-    { type: "image", src: "assets/screenshots/ss_05.jpg", label: "Co-op escape (placeholder)" },
-    { type: "image", src: "assets/screenshots/ss_06.jpg", label: "Don Hermit, concept (placeholder)" }
+    { type: "image", src: "assets/screenshots/Screenshot 2026-09-26 214136.png", label: "Co-op escape (placeholder)" },
+    { type: "image", src: "assets/screenshots/Screenshot 2026-09-26 233045.png", label: "Don Hermit, concept (placeholder)" }
   ],
 
   // Tags shown in the summary panel. planned: true marks features that are not built yet.
